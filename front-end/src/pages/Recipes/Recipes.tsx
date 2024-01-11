@@ -19,8 +19,8 @@ function Recipes({ path } : RecipesProps) {
   const [listCategory, setListCategory] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  const MEAL_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
-  const DRINK_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
+  const MEAL_URL = 'http://localhost:3001/meals';
+  const DRINK_URL = 'http://localhost:3001/drinks';
 
   useEffect(() => {
     const fetchData = async () => {
