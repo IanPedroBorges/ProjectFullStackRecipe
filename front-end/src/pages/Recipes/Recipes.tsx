@@ -28,7 +28,7 @@ function Recipes({ path } : RecipesProps) {
       if (path === 'meals' && meals?.length === 0) {
         const dataMeals = await api(MEAL_URL);
         setMeals(dataMeals?.meals);
-        const dataCategoryMeals = await api('https://www.themealdb.com/api/json/v1/1/list.php?c=list');
+        const dataCategoryMeals = await api('http://localhost:3001/meals/categories');
         setListCategory(dataCategoryMeals?.meals);
         setCarregando(false);
       }
@@ -36,7 +36,7 @@ function Recipes({ path } : RecipesProps) {
         const dataDrinks = await api(DRINK_URL);
         setDrinks(dataDrinks?.drinks);
 
-        const dataCategoryDrinks = await api('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list');
+        const dataCategoryDrinks = await api('http://localhost:3001/drinks/categories');
         setListCategory(dataCategoryDrinks?.drinks);
         setCarregando(false);
       }
