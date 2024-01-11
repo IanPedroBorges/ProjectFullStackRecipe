@@ -16,8 +16,10 @@
     "sequelize-cli": "6.6.1"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql2": "3.0.0",
+    "node-fetch": "^3.3.2",
     "sequelize": "6.3.4"
   }
 }
