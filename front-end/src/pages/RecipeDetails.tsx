@@ -17,13 +17,13 @@ export default function RecipeDetails() {
       try {
         if (pathname.includes('meals')) {
           const data = await api(
-            `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`,
+            `http://localhost:3001/meals/${id}`,
           );
           setIsMeals(true);
           setDetails(data);
         } else {
           const data = await api(
-            `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`,
+            `http://localhost:3001/drinks/${id}`,
           );
           setIsMeals(false);
           setDetails(data);

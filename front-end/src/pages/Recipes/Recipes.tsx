@@ -50,12 +50,12 @@ function Recipes({ path } : RecipesProps) {
     setCarregando(true);
 
     if (path === 'drinks') {
-      const drinksFilteredByCategory = await api(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${clickedValue}`);
+      const drinksFilteredByCategory = await api(`http://localhost:3001/drinks/categories?c=${clickedValue}`);
       setDrinks(drinksFilteredByCategory?.drinks);
       setCarregando(false);
     }
     if (path === 'meals') {
-      const mealsFilteredByCategory = await api(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${clickedValue}`);
+      const mealsFilteredByCategory = await api(`http://localhost:3001/meals/categories?c=${clickedValue}`);
       setMeals(mealsFilteredByCategory?.meals);
       setCarregando(false);
     }
