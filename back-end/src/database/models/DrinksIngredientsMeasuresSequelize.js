@@ -21,33 +21,33 @@ const DrinksIngredientsMeasuresSequelize = (sequelize, DataTypes) => {
     },
     {
         timestamps: false,
-        tableName: 'drinksIngredientsMeasures',
+        tableName: 'drinks_ingredients_measures',
     });
 
     DrinksIngredientsMeasures.associate = (models) => {
-        models.Drinks.belongsToMany(models.Ingredients, {
+        models.Drinks.hasMany(models.Ingredients, {
             as: 'strIngredient',
             through: DrinksIngredientsMeasures,
             foreignKey: 'idDrink',
-            otherKey: 'idIngredient',
+            otherKey: 'id',
         });
         models.Ingredients.belongsToMany(models.Drinks, {
             as: 'strDrink',
             through: DrinksIngredientsMeasures,
-            foreignKey: 'idIngredient',
+            foreignKey: 'id',
             otherKey: 'idDrink',
         });
         models.Measures.belongsToMany(models.Drinks, {
-            as: 'strMeasure',
-            through: DrinksIngredientsMeasures,
-            foreignKey: 'idMeasure',
-            otherKey: 'idDrink',
-        });
-        models.Drinks.belongsToMany(models.Measures, {
             as: 'strDrink',
             through: DrinksIngredientsMeasures,
+            foreignKey: 'id',
+            otherKey: 'idDrink',
+        });
+        models.Drinks.hasMany(models.Measures, {
+            as: 'strMeasure',
+            through: DrinksIngredientsMeasures,
             foreignKey: 'idDrink',
-            otherKey: 'idMeasure',
+            otherKey: 'id',
         });
     };
 

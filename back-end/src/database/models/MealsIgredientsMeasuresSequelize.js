@@ -26,25 +26,25 @@ const MealsIngredientsMeasuresSequelize = (sequelize, DataTypes) => {
             as: 'strIngredient',
             through: MealsIngredientsMeasures,
             foreignKey: 'idMeal',
-            otherKey: 'idIngredient',
+            otherKey: 'id',
         });
         models.Ingredients.belongsToMany(models.Meals, {
             as: 'strMeal',
             through: MealsIngredientsMeasures,
-            foreignKey: 'idIngredient',
+            foreignKey: 'id',
             otherKey: 'idMeal',
         });
         models.Measures.belongsToMany(models.Meals, {
-            as: 'strMeasure',
+            as: 'strMeal',
             through: MealsIngredientsMeasures,
-            foreignKey: 'idMeasure',
+            foreignKey: 'id',
             otherKey: 'idMeal',
         });
         models.Meals.belongsToMany(models.Measures, {
-            as: 'strMeal',
+            as: 'strMeasure',
             through: MealsIngredientsMeasures,
             foreignKey: 'idMeal',
-            otherKey: 'idMeasure',
+            otherKey: 'id',
         });
     };
 
