@@ -93,7 +93,7 @@ export default function MealsDetails({ meals }: { meals: Meals }) {
     const recommendationMeals = async () => {
       try {
         const response = await fetch(
-          'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=',
+          'http://localhost:3001/drinks',
         );
         const drinkRecommendation = await response.json();
         setData(drinkRecommendation.drinks);
