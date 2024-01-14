@@ -16,6 +16,7 @@ const getDrinksAllCategories = async () => {
     return drinks.data;
 };
 
+
 const getDrinksByCategory = async (category) => {
     const drinks = await axios({
         method: 'get',

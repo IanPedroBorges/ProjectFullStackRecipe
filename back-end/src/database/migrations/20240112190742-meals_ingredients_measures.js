@@ -37,10 +37,13 @@ module.exports = {
                 onUpdate: 'CASCADE',
                 onDelete: 'CASCADE',
             },
+        }, {
+            timestamps: false,
         });
     },
 
-    async down (queryInterface) {
+    // eslint-disable-next-line no-unused-vars
+    async down (queryInterface, sequelize) {
         await queryInterface.dropTable('meals_ingredients_measures');
     }
 };

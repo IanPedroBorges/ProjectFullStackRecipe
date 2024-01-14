@@ -19,7 +19,8 @@ module.exports = {
         });
     },
 
-    async down (queryInterface) {
+    // eslint-disable-next-line no-unused-vars
+    async down (queryInterface, sequelize) {
         await queryInterface.dropTable('measures');
     }
 };
