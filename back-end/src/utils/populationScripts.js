@@ -13,10 +13,7 @@ const populationsAllMeals = async () => {
 const getAllIngredients = async () => {
     try {
         const Meals = await axios.get('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
-        const Drinks = await axios({
-            method: 'get',
-            url: 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-        });
+        const Drinks = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list');
         return [...Meals.data.meals,Drinks.data.drinks];
     } catch (err) {
         console.log('error', err);
@@ -92,25 +89,31 @@ const seedAllIngredients = async () => {
 
 const seedAllMeasures = async () => {
     const allMeals = await populationsAllMeals();
-    console.log(allMeals);
-    const seedAllMeasuresMeals = Object.entries(allMeals).reduce((acc, curr) => {
-        if (curr[0].includes('strMeasure') && curr[1] !== '' && curr[1] !== null) {
-            acc.push(curr[1]);
-        }
-        // console.log(curr)
+    const seedAllMeasuresMeals = allMeals.reduce((acc, curr) => {
+        Object.keys(curr).filter((key) => key.includes('strMeasure')).forEach((key) => {
+            if(curr[key] !== '' && curr[key] !== null) {
+                if (acc.includes(curr[key])) {
+                    return;
+                }
+                acc.push(curr[key]);
+            }
+        });
         return acc;
     }, []);
-    // console.log(seedAllMeasuresMeals);
     const allDrinks = await populationsAllDrinks();
-    const seedAllMeasuresDrinks = Object.entries(allDrinks).reduce((acc, curr) => {
-        if (curr[0].includes('strMeasure') && curr[1] !== '' && curr[1] !== null) {
-            acc.push(curr[1]);
-        }
+    const seedAllMeasuresDrinks = allDrinks.reduce((acc, curr) => {
+        Object.keys(curr).filter((key) => key.includes('strMeasure')).forEach((key) => {
+            if(curr[key] !== '' && curr[key] !== null) {
+                if (acc.includes(curr[key])) {
+                    return;
+                }
+                acc.push(curr[key]);
+            }
+        });
         return acc;
-    });
-    
+    }, []);
     const seedAllMeasures = [...seedAllMeasuresMeals, ...seedAllMeasuresDrinks];
-    return seedAllMeasures;
+    return seedAllMeasures.map((measure) => ({strMeasure: measure}));
 };
 
 seedAllMeasures();
