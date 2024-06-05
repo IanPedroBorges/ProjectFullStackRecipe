@@ -8,6 +8,7 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
                 allowNull: false,
+                autoIncrement: true,
             },
             strMeasure: {
                 type: Sequelize.STRING,

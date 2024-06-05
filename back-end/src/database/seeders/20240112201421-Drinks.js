@@ -8,7 +8,7 @@ const { seedAllDrinks } = require('../../utils/populationScripts');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up (queryInterface, Sequelize) {
-        await queryInterface.bulkInsert('drinks', seedAllDrinks);
+        await queryInterface.bulkInsert('drinks', await seedAllDrinks());
     },
 
     async down (queryInterface, Sequelize) {

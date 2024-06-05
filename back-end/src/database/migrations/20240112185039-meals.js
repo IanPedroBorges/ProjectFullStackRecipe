@@ -8,6 +8,7 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
                 allowNull: false,
+                autoIncrement: true,
             },
             strMeal: {
                 type: Sequelize.STRING,
@@ -26,7 +27,7 @@ module.exports = {
                 allowNull: true,
             },
             strInstructions: {
-                type: Sequelize.STRING,
+                type: Sequelize.TEXT,
                 allowNull: true,
             },
             strMealThumb: {

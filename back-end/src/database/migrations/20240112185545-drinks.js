@@ -8,6 +8,7 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 primaryKey: true,
                 allowNull: false,
+                autoIncrement: true
             },
             strDrink: {
                 type: Sequelize.STRING,
@@ -17,11 +18,11 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: true,
             },
-            strDrinkCategory: {
+            strCategory: {
                 type: Sequelize.STRING,
-                allowNull: false,
+                allowNull: true,
             },
-            strAlchoholic: {
+            strAlcoholic: {
                 type: Sequelize.STRING,
                 allowNull: true,
             },
@@ -30,7 +31,7 @@ module.exports = {
                 allowNull: true,
             },
             strInstructions: {
-                type: Sequelize.STRING,
+                type: Sequelize.TEXT,
                 allowNull: true,
             },
             strDrinkThumb: {
