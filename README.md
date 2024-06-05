@@ -15,7 +15,6 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
 Nesta aplicação, seu grupo será responsável por criar um Back-end e integrá-lo ao front-end do projeto App de Receitas 🍽.
 
 Este projeto não é apenas sobre codar, explorando toda sua habilidade e de seu grupo em _hard skills_, mas também é sobre trabalhar em equipe, realizar discussões, fazer escolhas, estudar novas tecnologias, aprender e se divertir muito!
-
 ---
 
 #### App de Receitas versão Back-end
