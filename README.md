@@ -9,7 +9,6 @@ Aqui você encontrará os detalhes de como estruturar o desenvolvimento do seu p
 Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta e do Manual da Pessoa Estudante da Trybe.
 
 # Entregáveis
-
 <details id="desenvolvido">
   <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary>
 
